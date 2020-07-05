@@ -208,7 +208,7 @@ public class SnapshotGlPictureRecorder extends SnapshotPictureRecorder {
             // 2. Then we can apply the transformations
             Matrix.translateM(mOverlayDrawer.getTransform(), 0, 0.5F, 0.5F, 0);
             Matrix.rotateM(mOverlayDrawer.getTransform(), 0, mResult.rotation, 0, 0, 1);
-            Matrix.scaleM(mOverlayDrawer.getTransform(), 0, 1, -1, 1); // Vertical flip because we'll use glReadPixels
+            Matrix.scaleM(mOverlayDrawer.getTransform(), 0, -1, -1, 1); // Vertical flip because we'll use glReadPixels
             Matrix.translateM(mOverlayDrawer.getTransform(), 0, -0.5F, -0.5F, 0);
         }
         mResult.rotation = 0;
