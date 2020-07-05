@@ -211,6 +211,7 @@ public class TextureMediaEncoder extends VideoMediaEncoder<TextureConfig> {
         // (the Z axis), so we must translate to origin, rotate, then back to where we were.
         Matrix.translateM(transform, 0, 0.5F, 0.5F, 0);
         Matrix.rotateM(transform, 0, mTransformRotation, 0, 0, 1);
+        Matrix.scaleM(transform, 0, mTransformRotation, -1, 1, 1);
         Matrix.translateM(transform, 0, -0.5F, -0.5F, 0);
 
         // 3. Do the same for overlays with their own rotation.
